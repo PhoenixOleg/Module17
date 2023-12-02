@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
+    /// <summary>
+    /// Статический класс отображения отчетов по счету
+    /// </summary>
     public static class DisplayReports
     {
         public static void DisplayInterest(IAccount account)

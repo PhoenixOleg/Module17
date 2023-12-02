@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
+    /// <summary>
+    /// Класс обычного счета
+    /// </summary>
     public class GeneralAccount : IAccount, IRate
     {
         private double _interest;
-        private string _type = "Обычный";
+        private string _type = "Обычный"; //Тип счета менять только здесь
 
         // тип учетной записи
         public string Type { get; }
@@ -24,7 +27,7 @@ namespace Module17
             get { return _interest; }
         }
 
-        public GeneralAccount()
+        public GeneralAccount() //Инициализатор по умолчанию добавлен для совместимости с исходными вызовами (чтобы после рефакторинга остальной код не перелопачивать)
         {
             Type = _type;
         }
@@ -47,7 +50,7 @@ namespace Module17
                 _interest -= Balance * 0.4;
         }        
 
-        public void DisplayInterest() 
+        public void DisplayInterest() //Отображение отчета по ставке
         {
             DisplayReports.DisplayInterest(this);
         }

@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
+    /// <summary>
+    /// Класс зарплатного счета
+    /// </summary>
     public class SalaryAccount : IAccount, IRate
     {
         private double _interest;
-        private string _type = "Зарплатный";
+        private string _type = "Зарплатный"; //Тип счета менять только здесь
 
         // тип учетной записи
         public string Type { get; }
@@ -24,7 +27,7 @@ namespace Module17
             get { return _interest; }
         }
 
-        public SalaryAccount()
+        public SalaryAccount() //Инициализатор по умолчанию добавлен для совместимости с исходными вызовами (чтобы после рефакторинга остальной код не перелопачивать)
         {
             Type = _type;
         }
@@ -41,7 +44,7 @@ namespace Module17
             _interest = Balance * 0.5;
         }
 
-        public void DisplayInterest()
+        public void DisplayInterest() //Отображение отчета по ставке
         {
             DisplayReports.DisplayInterest(this);
         }

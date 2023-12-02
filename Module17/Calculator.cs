@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
+    /// <summary>
+    /// Класс калькуляций по счету
+    /// </summary>
     public static class Calculator
-    {
-        
+    {        
         // Метод для расчета процентной ставки
         public static void CalculateInterest(IRate account)
         {

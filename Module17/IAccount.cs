@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
+    /// <summary>
+    /// Интерфейс обязательных полей класса Account
+    /// </summary>
     public interface IAccount
     {
         public string Type { get; }
