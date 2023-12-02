@@ -23,6 +23,11 @@ namespace Module17
             get { return _interest; }
         }
 
+        public SalaryAccount()
+        {
+            Type = "Зарплатный";
+        }
+
         public SalaryAccount(double balance)
         {
             Type = "Зарплатный";

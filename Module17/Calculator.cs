@@ -9,10 +9,11 @@ namespace Module17
 {
     public static class Calculator
     {
+        
         // Метод для расчета процентной ставки
-        public static void CalculateInterest(Account account)
+        public static void CalculateInterest(IRate account)
         {
-
+            account.CalculateInterest();
         }
     }
 }

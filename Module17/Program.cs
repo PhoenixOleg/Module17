@@ -1,27 +1,25 @@
-﻿namespace Module17
+﻿using System.Security.Principal;
+
+namespace Module17
 {
     internal class Program
     {
         static void Main()
         {
-            Account account = new();
-            account.Balance = 999;
-            account.Type = "Обычный";
+            GeneralAccount generalAccount = new(999); //Открыли обычный счет и положили 999 денег
+            
+            Calculator.CalculateInterest(generalAccount);
+            Console.WriteLine($@"Ставка счета ""{generalAccount.Type}"" при балансе равном {generalAccount.Balance} составляет {generalAccount.Interest}");
 
-            Calculator.CalculateInterest(account);
-            Console.WriteLine($@"Ставка счета ""{account.Type}"" при балансе равном {account.Balance} составляет {account.Interest}");
+            generalAccount.Balance = 1000; //Доложили денег на счет
+            Calculator.CalculateInterest(generalAccount);
+            Console.WriteLine($@"Ставка счета ""{generalAccount.Type}"" при балансе равном {generalAccount.Balance} составляет {generalAccount.Interest}");
 
-            account.Balance = 1000;
-            account.Type = "Обычный";
+            SalaryAccount salaryAccount = new(); //Открыли открыли зарплатный счет 
+            salaryAccount.Balance = 1000; //положили 1000 денег
 
-            Calculator.CalculateInterest(account);
-            Console.WriteLine($@"Ставка счета ""{account.Type}"" при балансе равном {account.Balance} составляет {account.Interest}");
-
-            account.Balance = 1000;
-            account.Type = "Зарплатный";
-
-            Calculator.CalculateInterest(account);
-            Console.WriteLine($@"Ставка счета ""{account.Type}"" при балансе равном {account.Balance} составляет {account.Interest}");
+            Calculator.CalculateInterest(salaryAccount);
+            Console.WriteLine($@"Ставка счета ""{salaryAccount.Type}"" при балансе равном {salaryAccount.Balance} составляет {salaryAccount.Interest}");
 
             Console.ReadKey();
         }

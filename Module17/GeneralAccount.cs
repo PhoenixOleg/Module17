@@ -23,6 +23,11 @@ namespace Module17
             get { return _interest; }
         }
 
+        public GeneralAccount()
+        {
+            Type = "Обычный";
+        }
+
         public GeneralAccount(double balance)
         {
             Type = "Обычный";
@@ -33,6 +38,7 @@ namespace Module17
         {
             // расчет процентной ставки обычного аккаунта по правилам банка
             _interest = Balance * 0.4;
+            
             if (Balance < 1000)
                 _interest -= Balance * 0.2;
 
