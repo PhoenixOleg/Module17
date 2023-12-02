@@ -23,6 +23,7 @@ namespace Module17
             Calculator.CalculateInterest(salaryAccount);
             salaryAccount.DisplayInterest();
 
+            Console.WriteLine("\nНажмите любую клавишу для выхода");
             Console.ReadKey();
         }
     }

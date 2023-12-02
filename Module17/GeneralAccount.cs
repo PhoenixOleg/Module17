@@ -10,6 +10,7 @@ namespace Module17
     public class GeneralAccount : IAccount, IRate
     {
         private double _interest;
+        private string _type = "Обычный";
 
         // тип учетной записи
         public string Type { get; }
@@ -25,12 +26,12 @@ namespace Module17
 
         public GeneralAccount()
         {
-            Type = "Обычный";
+            Type = _type;
         }
 
         public GeneralAccount(double balance)
         {
-            Type = "Обычный";
+            Type = _type;
             Balance = balance;
         }
 

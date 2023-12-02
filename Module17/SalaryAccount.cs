@@ -10,6 +10,7 @@ namespace Module17
     public class SalaryAccount : IAccount, IRate
     {
         private double _interest;
+        private string _type = "Зарплатный";
 
         // тип учетной записи
         public string Type { get; }
@@ -25,12 +26,12 @@ namespace Module17
 
         public SalaryAccount()
         {
-            Type = "Зарплатный";
+            Type = _type;
         }
 
         public SalaryAccount(double balance)
         {
-            Type = "Зарплатный";
+            Type = _type;
             Balance = balance;
         }
 
