@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
-    public class GeneralAccount : IRate
+    public class GeneralAccount : IAccount, IRate
     {
         private double _interest;
 
@@ -44,6 +44,11 @@ namespace Module17
 
             if (Balance >= 1000)
                 _interest -= Balance * 0.4;
+        }        
+
+        public void DisplayInterest() 
+        {
+            DisplayReports.DisplayInterest(this);
         }
     }
 }

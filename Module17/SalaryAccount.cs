@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Module17
 {
-    public class SalaryAccount : IRate
+    public class SalaryAccount : IAccount, IRate
     {
         private double _interest;
 
@@ -38,6 +38,11 @@ namespace Module17
         {
             // расчет процентной ставки зарплатного аккаунта по правилам банка
             _interest = Balance * 0.5;
+        }
+
+        public void DisplayInterest()
+        {
+            DisplayReports.DisplayInterest(this);
         }
     }
 }
