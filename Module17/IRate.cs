@@ -8,10 +8,9 @@ namespace Module17
 {
     /// <summary>
     /// Интерфейс расчета процентной ставки
-    /// Расчет идет исходя из величиный баланса на счете
     /// </summary>
     public interface IRate
     {
-        public void CalculateInterest(double balance);
+        public void CalculateInterest();
     }
 }
